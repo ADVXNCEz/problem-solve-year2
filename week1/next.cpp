@@ -7,32 +7,31 @@ int main() {
 
     int N;
     cin >> N;
-    int box[N],check[N],hav[N];
+    int box[N],check[N],hav[N],old[N];
     int nub = 0 ;
-    int round =0;
+    int round = 0;
 
-    for(int i = 0; i<N; i++){
+    for(int i = 0; i < N; i++){
         cin >> box[i];
-        hav[i] = box[i];
+        hav[i] = i;
+        old[i] = i;
         check[i] = 0;
     }
-    int i = 0;
 
-    int temp = hav[0];
-    while (nub == N){
-        int n = box[i]-1;
-        temp = hav[n];
-        hav[n] = temp;
+    while (nub != N){
 
-        if(hav[n] == i+1){
-            if(check[i] == 0){
-                check[i] = 1;
-                nub ++;
+        for(int i = 0; i<N; i++){ 
+            int target = box[i]-1;
+            hav[target] = old[i];
+
+            if(hav[target] == target && check[target] == 0){
+                nub++;
+                check[target] = 1;
             }
-        }
 
-        i++;
-        i %=N;
+       }
+       
+        for(int i = 0; i<N; i++) old[i] = hav[i];
         round++;
     }
 

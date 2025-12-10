@@ -1,0 +1,1 @@
+{"name":"Local: fsort","url":"c:\\Users\\phuri\\Desktop\\GITHUB\\problem-solve-year2\\week3\\fsort.cpp","tests":[{"id":1765175865717,"input":"10\n5\n4\n1\n1\n4\n4\n5\n6\n10\n3","output":"4\n1\n5\n3\n6\n10"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\phuri\\Desktop\\GITHUB\\problem-solve-year2\\week3\\fsort.cpp","group":"local","local":true}

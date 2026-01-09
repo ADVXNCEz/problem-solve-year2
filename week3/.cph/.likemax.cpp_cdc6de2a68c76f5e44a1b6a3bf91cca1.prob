@@ -1,0 +1,1 @@
+{"name":"Local: likemax","url":"c:\\Users\\phuri\\Desktop\\GITHUB\\problem-solve-year2\\week3\\likemax.cpp","tests":[{"id":1767463017388,"input":"6\n1\n1\n2\n2\n3\n1\n","output":"1\n1\n1\n2\n2\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\phuri\\Desktop\\GITHUB\\problem-solve-year2\\week3\\likemax.cpp","group":"local","local":true}

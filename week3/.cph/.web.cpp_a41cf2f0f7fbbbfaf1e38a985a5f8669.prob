@@ -1,0 +1,1 @@
+{"name":"Local: web","url":"c:\\Users\\phuri\\Desktop\\GITHUB\\problem-solve-year2\\week3\\web.cpp","tests":[{"id":1767464882990,"input":"3 7\n1\n2\n3\n2\n5\n3\n1","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\phuri\\Desktop\\GITHUB\\problem-solve-year2\\week3\\web.cpp","group":"local","local":true}

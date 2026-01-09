@@ -1,23 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int check[20000];
-
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(NULL);
     
-    int h1,h2,b1,b2;
-    int x,y;
+    int H1,H2,B1,B2;
+    int X, Y;
+    cin >>H1>>H2>>B1>>B2>>X>>Y;
+    int ans = 0;
 
-    cin >>h1>>h2>>b1>>b2>>x>>y;
+    for (int w = 0; w <= min(H1, B1); w++) {
+        for (int b = 0; b <= min(H2, B2); b++) {
 
-    int Bb,Bw,Wb,Ww;
+            int same = w + b;
+            if (same > X + Y) continue;
+            int h1 = H1 - w;
+            int b1 = B1 - w;
+            int h2 = H2 - b;
+            int b2 = B2 - b;
 
-    if( x > y ){
-        
-
-
-
+            int diff = min(h1, b2) + min(h2, b1);
+            int money = min(same, X) + min(diff, Y);
+            ans = max(ans, money);
+        }
     }
+
+    cout <<ans<<endl;
+    return 0;
+    
 }

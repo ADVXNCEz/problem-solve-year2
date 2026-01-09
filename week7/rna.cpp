@@ -5,22 +5,20 @@ map<int,map<int,int>> dp;
 
 
 int RNA(string str,int start,int final){
-    if(start >= final || start >(str.size())-1 || final < 0 || final-start <= 4)return 0;
+    if(start > final) return 0;
 
-    for(int i = start; i < final; i++){
-        c = ;
-    }
-    int a = RNA(str,start+1,final);
-    int b = RNA(str,start,final-1);
+    if(dp[start][final] == 0) dp[start][final] = RNA(str,start+1,final);
+    int maxx = dp[start][final];
     
 
-    int maxx = max(a,b);
-
-    if((str[start] == 'C' && str[final] == 'G') || 
-       (str[start] == 'G' && str[final] == 'C') ||
-       (str[start] == 'A' && str[final] == 'U') ||
-       (str[start] == 'U' && str[final] == 'A') )
-        maxx = max(maxx ,RNA(str,start+1,final-1)+1);
+    for(int i = start+5; i < final+1; i++){
+        if((str[start] == 'C' && str[i] == 'G') || 
+        (str[start] == 'G' && str[i] == 'C') ||
+        (str[start] == 'A' && str[i] == 'U') ||
+        (str[start] == 'U' && str[i] == 'A') ){
+            maxx = max(maxx ,RNA(str,start+1,i-1) + 1 + RNA(str,i+1,final));
+        }
+    }
 
 
     return maxx;

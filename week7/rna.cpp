@@ -2,14 +2,17 @@
 using namespace std;
 
 map<int,map<int,int>> dp;
+map<int, map<int, bool>> vis;
 
 
 int RNA(string str,int start,int final){
     if(start > final) return 0;
 
-    if(dp[start][final] == 0) dp[start][final] = RNA(str,start+1,final);
+    if(vis[start][final])return dp[start][final];
+    vis[start][final] = true;
+
+    dp[start][final] = RNA(str,start+1,final);
     int maxx = dp[start][final];
-    
 
     for(int i = start+5; i < final+1; i++){
         if((str[start] == 'C' && str[i] == 'G') || 
@@ -21,7 +24,7 @@ int RNA(string str,int start,int final){
     }
 
 
-    return maxx;
+    return dp[start][final] = maxx;;
 }
 
 

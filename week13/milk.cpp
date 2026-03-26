@@ -24,7 +24,8 @@ int find(int u)
   if(parents[u] == u)  // I'm groot
     return u;
   else 
-    return find(parents[u]);
+    //return find(parents[u]);
+    return parents[u] = find(parents[u]); // Path Compression
 }
 void union_sets(int cu, int cv)
 {

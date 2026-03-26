@@ -1,24 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int check[20000];
-
-int main(){
+int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
-    
-    int N,K,T;
+
+    int N, K, T;
     cin >> N >> K >> T;
+
+    vector<int> check(N, 0);
+
     int i = 0;
-    check[i]=1;
+    check[0] = 1;
 
-    do{
-        i = (i+K)%N;
-        check[i]=1;
-    }while(i != 0 && i != T-1 );
+    while (true) {
+        i = (i + K) % N;
+        check[i] = 1;
+        if (i == 0 || i == T-1) break;
+    }
 
+    int nub = 0;
+    for (int x : check) if (x == 1) nub++;
 
-    int nub=0;
-    for(int i=0;i<N;i++)if(check[i] == 1)nub++;
     cout << nub;
 }
